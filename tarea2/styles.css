@@ -1,0 +1,77 @@
+:root {
+  --bg: #07040f;
+  --panel: rgba(16, 12, 32, .92);
+  --text: #f4f0ff;
+  --muted: #b7a8d9;
+  --line: #3b2d62;
+  --accent: #7dd3fc;
+  --ok: #4ade80;
+  --bad: #fb7185;
+  --warn: #fbbf24;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Segoe UI, system-ui, sans-serif;
+  background:
+    radial-gradient(900px 420px at 80% -10%, #4c1d95 0%, transparent 55%),
+    radial-gradient(700px 380px at 0% 100%, #0f172a 0%, transparent 50%),
+    var(--bg);
+  color: var(--text);
+}
+header { padding: 16px 22px 8px; display: flex; align-items: baseline; gap: 16px; }
+header a { color: #c4b5fd; text-decoration: none; font-weight: 600; }
+header h1 { margin: 0; font-size: 1.35rem; letter-spacing: .02em; }
+.layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 14px;
+  padding: 12px 18px 28px;
+}
+@media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+aside, .board {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+label { display: block; font-size: 12px; color: var(--muted); margin: 12px 0 4px; }
+input[type="range"] { width: 100%; accent-color: #a78bfa; }
+.val { float: right; color: var(--accent); font-variant-numeric: tabular-nums; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.go { background: linear-gradient(180deg, #67e8f9, #22d3ee); color: #082f49; }
+.ghost { background: #2e1065; color: var(--text); }
+canvas#view {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  background: #02010a;
+  border: 1px solid #5b21b6;
+}
+.stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.stat {
+  flex: 1;
+  min-width: 110px;
+  background: #120c22;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+.stat b { display: block; font-size: 18px; }
+.stat span { font-size: 11px; color: var(--muted); }
+canvas#chart {
+  width: 100%;
+  height: 86px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: #0b0714;
+  border: 1px solid var(--line);
+}

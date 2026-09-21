@@ -1,0 +1,65 @@
+:root {
+  --bg: #eef4ea;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #d6d3d1;
+  --card: #fff;
+  --accent: #ea580c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Segoe UI, system-ui, sans-serif;
+  background:
+    radial-gradient(900px 400px at 100% 0%, #fed7aa 0%, transparent 50%),
+    var(--bg);
+  color: var(--ink);
+}
+header { padding: 16px 22px 8px; display: flex; align-items: baseline; gap: 16px; }
+header a { color: #c2410c; font-weight: 700; text-decoration: none; }
+header h1 { margin: 0; font-size: 1.35rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 14px;
+  padding: 12px 18px 32px;
+}
+@media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+aside, .board {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; }
+input[type="range"] { width: 100%; accent-color: #ea580c; }
+.val { float: right; color: var(--accent); font-weight: 800; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+button {
+  border: 0; border-radius: 10px; padding: 10px 12px;
+  cursor: pointer; font-weight: 800;
+}
+.go { background: #ea580c; color: #fff; }
+.step { background: #1c1917; color: #fff; }
+.ghost { background: #e7e5e4; }
+canvas#map {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 2px solid #fdba74;
+  background: #dbeafe;
+}
+.route-box {
+  margin-top: 10px; background: #1c1917; color: #fed7aa;
+  border-radius: 12px; padding: 12px; font-family: Consolas, monospace;
+  font-size: 15px; letter-spacing: .04em;
+}
+.stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.stat {
+  flex: 1; min-width: 120px; background: #fff7ed; border: 1px solid #fed7aa;
+  border-radius: 12px; padding: 8px 10px;
+}
+.stat b { display: block; font-size: 18px; }
+.stat span { font-size: 11px; color: var(--muted); }
+canvas#chart { width: 100%; height: 80px; margin-top: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }

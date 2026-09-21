@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarea 1 — Ruta del repartidor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a href="../index.html">Inicio</a>
+    <h1>Optimización de ruta — algoritmo genético</h1>
+  </header>
+  <div class="layout">
+    <aside>
+      <label>Barrios <span class="val" id="vCities">8</span></label>
+      <input id="nCities" type="range" min="5" max="12" value="8" />
+
+      <label>Población <span class="val" id="vPop">40</span></label>
+      <input id="nPop" type="range" min="4" max="80" step="2" value="40" />
+
+      <label>Pc <span class="val" id="vPc">0.85</span></label>
+      <input id="pc" type="range" min="0" max="100" value="85" />
+
+      <label>Pm <span class="val" id="vPm">0.12</span></label>
+      <input id="pm" type="range" min="1" max="40" value="12" />
+
+      <label>Elitismo <span class="val" id="vElite">2</span></label>
+      <input id="elite" type="range" min="1" max="6" value="2" />
+
+      <label>Velocidad <span class="val" id="vSpd">2x</span></label>
+      <input id="spd" type="range" min="1" max="6" value="2" />
+
+      <div class="btns">
+        <button class="go" id="btnRun">Iniciar</button>
+        <button class="step" id="btnStep">Generación</button>
+        <button class="ghost" id="btnMap">Mapa</button>
+        <button class="ghost" id="btnReset">Reiniciar</button>
+      </div>
+    </aside>
+    <div class="board">
+      <canvas id="map" width="900" height="520"></canvas>
+      <div class="route-box" id="routeText">—</div>
+      <div class="stats">
+        <div class="stat"><span>Generación</span><b id="gGen">0</b></div>
+        <div class="stat"><span>Barrios</span><b id="gCit">8</b></div>
+        <div class="stat"><span>Población</span><b id="gPop">40</b></div>
+        <div class="stat"><span>Distancia</span><b id="gDist">—</b></div>
+      </div>
+      <canvas id="chart" width="900" height="80"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarea 2 — Aterrizaje alienígena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a href="../index.html">Inicio</a>
+    <h1>Aterrizaje — algoritmo genético</h1>
+  </header>
+  <div class="layout">
+    <aside>
+      <label>Población <span class="val" id="vPop">60</span></label>
+      <input id="nPop" type="range" min="20" max="80" step="2" value="60" />
+
+      <label>Pc <span class="val" id="vPc">0.86</span></label>
+      <input id="pc" type="range" min="0" max="100" value="86" />
+
+      <label>Pm <span class="val" id="vPm">0.08</span></label>
+      <input id="pm" type="range" min="1" max="25" value="8" />
+
+      <label>Elitismo <span class="val" id="vElite">5</span></label>
+      <input id="elite" type="range" min="1" max="8" value="5" />
+
+      <label>Velocidad <span class="val" id="vSpd">2x</span></label>
+      <input id="spd" type="range" min="1" max="8" value="2" />
+
+      <div class="btns">
+        <button class="go" id="btnRun">Iniciar</button>
+        <button class="ghost" id="btnReset">Reiniciar</button>
+      </div>
+    </aside>
+    <div class="board">
+      <canvas id="view" width="960" height="540"></canvas>
+      <div class="stats">
+        <div class="stat"><span>Generación</span><b id="sGen">0</b></div>
+        <div class="stat"><span>Estado</span><b id="sState">Vuelo</b></div>
+        <div class="stat"><span>Aterrizajes</span><b id="sLand">0</b></div>
+        <div class="stat"><span>Fitness</span><b id="sBest">0</b></div>
+      </div>
+      <canvas id="chart" width="960" height="86"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
